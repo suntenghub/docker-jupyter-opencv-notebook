@@ -9,6 +9,7 @@ RUN apt-get update \
        libxvidcore-dev libx264-dev \
        libatlas-base-dev gfortran \
        libhdf5-dev \
+       libgtk2.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ADD ./build_opencv.sh /tmp/
