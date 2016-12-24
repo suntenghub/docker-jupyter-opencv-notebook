@@ -12,10 +12,12 @@ RUN apt-get update \
        libgtk2.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
-ADD ./build_opencv.sh /tmp/
+ADD ./build_opencv_python3.sh /tmp/
+ADD ./build_opencv_python2.sh /tmp/
 
 USER $NB_USER
 RUN pip install numpy
-RUN bash /tmp/build_opencv.sh
+RUN bash /tmp/build_opencv_python3.sh
+#RUN bash /tmp/build_opencv_python2.sh
 
 USER $NB_USER
